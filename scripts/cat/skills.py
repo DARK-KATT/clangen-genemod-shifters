@@ -8,8 +8,18 @@ from scripts.cat.enums import CatRank, CatAge
 
 
 class SkillPath(Enum):
-    TEACHER = ("quick to help", "good teacher", "great teacher", "excellent teacher")
-    HUNTER = ("moss ball hunter", "good hunter", "great hunter", "renowned hunter")
+    TEACHER = (
+        "quick to help", 
+        "good teacher", 
+        "great teacher", 
+        "excellent teacher"
+    )
+    HUNTER = (
+        "moss ball hunter", 
+        "good hunter", 
+        "great hunter", 
+        "renowned hunter"
+    )
     FIGHTER = (
         "avid play-fighter",
         "good fighter",
@@ -58,14 +68,24 @@ class SkillPath(Enum):
         "great mediator",
         "skilled mediator",
     )
-    CLEVER = ("quick witted", "clever", "very clever", "incredibly clever")
+    CLEVER = (
+        "quick witted", 
+        "clever", 
+        "very clever", 
+        "incredibly clever"
+    )
     INSIGHTFUL = (
         "careful listener",
         "helpful insight",
         "valuable insight",
         "trusted advisor",
     )
-    SENSE = ("oddly observant", "natural intuition", "keen eye", "unnatural senses")
+    SENSE = (
+        "oddly observant", 
+        "natural intuition", 
+        "keen eye", 
+        "unnatural senses"
+    )
     KIT = (
         "active imagination",
         "good kitsitter",
@@ -84,16 +104,36 @@ class SkillPath(Enum):
         "lore keeper",
         "lore master",
     )
-    CAMP = ("picky nest builder", "steady paws", "den builder", "camp keeper")
-    HEALER = ("interested in herbs", "good healer", "great healer", "fantastic healer")
+    CAMP = (
+        "picky nest builder", 
+        "steady paws", 
+        "den builder", 
+        "camp keeper"
+    )
+    HEALER = (
+        "interested in herbs", 
+        "good healer", 
+        "great healer", 
+        "fantastic healer"
+    )
     STAR = (
         "curious about StarClan",
         "connection to StarClan",
         "deep StarClan bond",
         "unshakable StarClan link",
     )
-    OMEN = ("interested in oddities", "omen seeker", "omen sense", "omen sight")
-    DREAM = ("restless sleeper", "strange dreamer", "dream walker", "dream shaper")
+    OMEN = (
+        "interested in oddities", 
+        "omen seeker", 
+        "omen sense", 
+        "omen sight"
+    )
+    DREAM = (
+        "restless sleeper", 
+        "strange dreamer", 
+        "dream walker", 
+        "dream shaper"
+    )
     CLAIRVOYANT = (
         "oddly insightful",
         "somewhat clairvoyant",
@@ -106,14 +146,127 @@ class SkillPath(Enum):
         "prophecy interpreter",
         "prophet",
     )
-    GHOST = ("morbid curiosity", "ghost sense", "ghost sight", "ghost speaker")
+    GHOST = (
+        "morbid curiosity", 
+        "ghost sense", 
+        "ghost sight", 
+        "ghost speaker"
+    )
     DARK = (
         "interested in the Dark Forest",
         "Dark Forest affinity",
         "deep Dark Forest bond",
         "unshakable Dark Forest link",
     )
-
+    GARDENER = (
+        "loves to pick flowers",
+        "garden-tender",
+        "herb organizer",
+        "botanist"
+    )
+    HERBAL = (
+        "curious about remedies",
+        "herbal inventor",
+        "poison developer",
+        "remedy specialist"
+    )
+    LEADERSHIP = (
+        "head helper",
+        "patrol leader",
+        "overseer",
+        "idolized figurehead",
+    )
+    HISTORY = (
+        "history lover",
+        "book keeper",
+        "trained archivist",
+        "dedicated historian"
+    )
+    INVESTIGATOR = (
+        "immersed in mysteries",
+        "skilled deducer",
+        "great sleuth",
+        "distinguished detective"
+    )
+    CHEF = (
+        "always finishes their food",
+        "budding cook",
+        "practiced gourmet",
+        "masterful chef",
+    )
+    TRACKER = (
+        "studies tracks",
+        "trained tracker",
+        "great tracker",
+        "masterful tracker"
+    )
+    SONG = (
+        "likes to sing",
+        "charming singing voice",
+        "captivating singer",
+        "beautiful singer"
+    )
+    TREASURE = (
+        "collector of trinkets",
+        "treasure finder",
+        "ruin explorer",
+        "treasure trove owner",
+    )
+    FISHER = (
+        "plays in the pond",
+        "trained fisher",
+        "skilled fisher",
+        "masterful fisher"
+    )
+    LANGUAGE = (
+        "eager mimic",
+        "trained linguist",
+        "knowledge of foreign tongues",
+        "multilinguist"
+    )
+    TRAINER = (
+        "curious about animals",
+        "trainer assistant",
+        "animal breeder",
+        "animal trainer",
+    )
+    VET = (
+        "fond of animals",
+        "animal healer",
+        "great animal healer",
+        "fantastic animal healer"
+    )
+    DELIVERER = (
+        "morbid curiosity",
+        "trained nurse",
+        "experienced midwife",
+        "pregnancy expert"
+    )
+    GUARDIAN = (
+        "follows around the guards",
+        "watchful sentry",
+        "dedicated guard",
+        "skilled guardian",
+    )
+    DECORATOR = (
+        "creative mind",
+        "eye for aesthetics",
+        "talented designer",
+        "renowned decorator"
+    )
+    ARTISAN = (
+        "enjoys arts-and-crafts ",
+        "trained artisan",
+        "skilled artisan",
+        "talanted artisan"
+    )
+    NAVIGATOR = (
+        "good with directions",
+        "natural pathfinder",
+        "avid navigator",
+        "famed navigator",
+    )
+    
     @staticmethod
     def get_random(exclude: list = ()):
         """Get a random path, with more uncommon paths being less common"""
@@ -128,7 +281,13 @@ class SkillPath(Enum):
                 SkillPath.OMEN,
                 SkillPath.STAR,
                 SkillPath.HEALER,
+                SkillPath.HERBAL,
                 SkillPath.DARK,
+                SkillPath.TREASURE,
+                SkillPath.SONG,
+                SkillPath.LANGUAGE,
+                SkillPath.VET,
+                SkillPath.TRAINER,
             )
             if i not in exclude
         ]
@@ -157,7 +316,7 @@ class SkillTypeFlag(Flag):
     SMART = auto()
     OBSERVANT = auto()
     SOCIAL = auto()
-
+    CREATE = auto()
 
 class Skill:
     """Skills handling functions mostly"""
@@ -191,6 +350,24 @@ class Skill:
         SkillPath.PROPHET: "prophesying",
         SkillPath.GHOST: "ghosts",
         SkillPath.DARK: "dark forest",
+        SkillPath.GARDENER: "gardening",
+        SkillPath.HERBAL: "herbs",
+        SkillPath.LEADERSHIP: "leading",
+        SkillPath.HISTORY: "history",
+        SkillPath.INVESTIGATOR: "investigation",
+        SkillPath.CHEF: "cooking",
+        SkillPath.TRACKER: "tracking",
+        SkillPath.SONG: "singing",
+        SkillPath.TREASURE: "finding treasure",
+        SkillPath.FISHER: "fishing",
+        SkillPath.LANGUAGE: "linguistics",
+        SkillPath.TRAINER: "animal training",
+        SkillPath.VET:"animal caring",
+        SkillPath.DELIVERER: "delivering",
+        SkillPath.GUARDIAN: "guarding",
+        SkillPath.DECORATOR: "decorating",
+        SkillPath.ARTISAN: "crafting",
+        SkillPath.NAVIGATOR: "navigation",
     }
 
     def __init__(self, path: SkillPath, points: int = 0, interest_only: bool = False):
@@ -312,7 +489,8 @@ class CatSkills:
         | SkillTypeFlag.AGILE
         | SkillTypeFlag.SMART
         | SkillTypeFlag.OBSERVANT
-        | SkillTypeFlag.SOCIAL,
+        | SkillTypeFlag.SOCIAL
+        | SkillTypeFlag.CREATE,
         SkillPath.HUNTER: SkillTypeFlag.STRONG
         | SkillTypeFlag.AGILE
         | SkillTypeFlag.OBSERVANT,
@@ -341,6 +519,24 @@ class CatSkills:
         SkillPath.PROPHET: SkillTypeFlag.SUPERNATURAL,
         SkillPath.GHOST: SkillTypeFlag.SUPERNATURAL,
         SkillPath.DARK: SkillTypeFlag.SUPERNATURAL,
+        SkillPath.GARDENER: SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT | SkillTypeFlag.CREATE,
+        SkillPath.HERBAL: SkillTypeFlag.SMART | SkillTypeFlag.CREATE | SkillTypeFlag.SOCIAL,
+        SkillPath.LEADERSHIP: SkillTypeFlag.SOCIAL | SkillTypeFlag.SMART,
+        SkillPath.HISTORY: SkillTypeFlag.SMART,
+        SkillPath.INVESTIGATOR: SkillTypeFlag.OBSERVANT | SkillTypeFlag.SMART,
+        SkillPath.CHEF: SkillTypeFlag.CREATE,
+        SkillPath.TRACKER: SkillTypeFlag.OBSERVANT | SkillTypeFlag.SMART | SkillTypeFlag.AGILE,
+        SkillPath.SONG: SkillTypeFlag.SOCIAL,
+        SkillPath.TREASURE: SkillTypeFlag.OBSERVANT | SkillTypeFlag.SMART | SkillTypeFlag.AGILE,
+        SkillPath.FISHER: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
+        SkillPath.LANGUAGE: SkillTypeFlag.SOCIAL | SkillTypeFlag.SMART,
+        SkillPath.TRAINER: SkillTypeFlag.SMART | SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
+        SkillPath.VET: SkillTypeFlag.SMART,
+        SkillPath.DELIVERER: SkillTypeFlag.SOCIAL | SkillTypeFlag.SMART,
+        SkillPath.GUARDIAN: SkillTypeFlag.STRONG | SkillTypeFlag.AGILE,
+        SkillPath.DECORATOR: SkillTypeFlag.CREATE | SkillTypeFlag.SOCIAL,
+        SkillPath.ARTISAN: SkillTypeFlag.CREATE | SkillTypeFlag.SOCIAL,
+        SkillPath.NAVIGATOR: SkillTypeFlag.OBSERVANT | SkillTypeFlag.AGILE,
     }
 
     # pylint: enable=unsupported-binary-operation
@@ -385,7 +581,7 @@ class CatSkills:
 
         if rank == CatRank.NEWBORN or moons <= 0:
             pass
-        elif rank == CatRank.KITTEN or moons < 6:
+        elif rank == CatRank.KITTEN or moons < 20:
             new_skill.primary = Skill.get_random_skill(points=0, interest_only=True)
         elif rank in [
             CatRank.APPRENTICE,
