@@ -7,7 +7,7 @@ import i18n
 
 import scripts.cat_relations.interaction as interactions
 from scripts.cat.cats import Cat
-from scripts.cat.enums import CatRank, CatGroup
+from scripts.cat.enums import CatAge, CatRank, CatGroup
 from scripts.cat.history import History
 from scripts.cat_relations.relationship import (
     Relationship,
@@ -707,7 +707,10 @@ class RomanticEvents:
     def check_if_new_mate(cat_from, cat_to):
         """Checks if the two cats can become mates, or not. Returns: boolean and event_string"""
         become_mates = False
-        young_age = ["newborn", "kitten", "adolescent"]
+        young_age = [CatAge.NEWBORN, 
+                     CatAge.KITTEN, 
+                     CatAge.ADOLESCENT,
+                     ]
         if cat_to.status.is_outsider != cat_from.status.is_outsider:
             return False, None
 
