@@ -3,7 +3,7 @@
 lock_season = false
 
 # whether or not development tools are disabled
-dev_tools = false
+dev_tools = true
 
 # settings regarding relationship events, also called "interactions"
 [relationship]
@@ -14,7 +14,7 @@ dev_tools = false
   max_interaction_special = 8
 
   # sets the positive or negative effect that interactions will have on other cats based on personality compatibility
-  compatibility_effect = 5
+  compatibility_effect = 8
 
   # Helps set a buff for interactions that increases other values other than the main value.
   # For example, if a cat has a positive romantic interaction with another cat,
@@ -38,13 +38,13 @@ dev_tools = false
 
   [relationship.in_decrease_value]
     # amount a relationship changes for "high", "medium", and "low" effects for interactions
-    low = 8
-    medium = 12
-    high = 16
+    low = 10
+    medium = 15
+    high = 20
 
 [mates]
   # maximum age difference allowed for cats to be romantic with each other
-  age_range = 40
+  age_range = 50
 
   # if true, disables the same-age group check
   override_same_age_group = false
@@ -133,20 +133,20 @@ dev_tools = false
     # default relationships buff for a kit's relationships to their parents
     [new_cat.parent_buff.kit_to_parent]
       romantic = 0
-      platonic = 40
+      platonic = 60
       dislike = 0
       admiration = 30
-      comfortable = 40
+      comfortable = 50
       jealousy = 0
       trust = 50
 
     # default relationships buff for a parent's relationships to their kits
     [new_cat.parent_buff.parent_to_kit]
       romantic = 0
-      platonic = 40
+      platonic = 60
       dislike = 0
-      admiration = 30
-      comfortable = 40
+      admiration = 20
+      comfortable = 50
       jealousy = 0
       trust = 30
 
@@ -154,20 +154,20 @@ dev_tools = false
     # default relationships buff for siblings' relationships in one direction
     [new_cat.sib_buff.cat1_to_cat2]
       romantic = 0
-      platonic = 40
+      platonic = 60
       dislike = 0
       admiration = 10
-      comfortable = 40
+      comfortable = 50
       jealousy = 0
       trust = 30
 
     # default relationships buff for siblings' relationships in the other direction
     [new_cat.sib_buff.cat2_to_cat1]
       romantic = 0
-      platonic = 40
+      platonic = 60
       dislike = 0
       admiration = 10
-      comfortable = 40
+      comfortable = 50
       jealousy = 0
       trust = 30
 
@@ -197,7 +197,7 @@ dev_tools = false
   birth_cooldown = 6
 
   # 1/chance that kits, relationship and other factors will influence this chance. modded_ is used with modded litters
-  primary_chance_mated = 80
+  primary_chance_mated = 70
   modded_primary_chance_mated = 50
 
   # 1/chance that kits, relationship and other factors will influence this chance. modded_ is used with modded litters
@@ -231,10 +231,10 @@ dev_tools = false
 
   # number / total for that age across all kit amounts = chance of having that many kits for that age
   [pregnancy.one_kit_possibility]
-    "young adult" = 8
-    adult = 9
-    "senior adult" = 10
-    senior = 4
+    "young adult" = 50
+    adult = 30
+    "senior adult" = 80
+    senior = 80
 
   [pregnancy.two_kit_possibility]
     "young adult" = 10
@@ -243,25 +243,25 @@ dev_tools = false
     senior = 3
 
   [pregnancy.three_kit_possibility]
-    "young adult" = 17
+    "young adult" = 10
     adult = 15
-    "senior adult" = 5
-    senior = 1
+    "senior adult" = 1
+    senior = 0
 
   [pregnancy.four_kit_possibility]
-    "young adult" = 12
-    adult = 8
-    "senior adult" = 2
+    "young adult" = 0
+    adult = 0
+    "senior adult" = 0
     senior = 0
 
   [pregnancy.five_kit_possibility]
-    "young adult" = 6
-    adult = 2
+    "young adult" = 0
+    adult = 0
     "senior adult" = 0
     senior = 0
 
   [pregnancy.max_kit_possibility]
-    "young adult" = 2
+    "young adult" = 0
     adult = 0
     "senior adult" = 0
     senior = 0
@@ -420,11 +420,11 @@ dev_tools = false
   # these HAVE to be in the correct order: where one ends, the next one begins on the next number
   # if you DON'T DO THIS, your game WILL break
   newborn = [0, 0]
-  kitten = [1, 5]
-  adolescent = [6, 11]
-  "young adult" = [12, 47]
-  adult = [48, 95]
-  "senior adult" = [96, 119]
+  kitten = [1, 19]
+  adolescent = [20, 39]
+  "young adult" = [40, 59]
+  adult = [60, 99]
+  "senior adult" = [100, 119]
   senior = [120, 300]
 
 [cat_sprites]
@@ -476,7 +476,7 @@ dev_tools = false
 
 [death_related]
   # base 1/chance that leader will die
-  leader_death_chance = 50
+  leader_death_chance = 70
 
   # base 1/chance a cat will die
   classic_death_chance = 500
@@ -501,7 +501,7 @@ dev_tools = false
   # multiplier that affects the chances of cats dying once they are over old_age_death_start moons
   # Average life expectancy with default old_age_death_start of 150 moons:
   #   1 = 189 moons, 2 = 178, 3 = 172, 4.5 (default) = 168, 8 = 163, 20 = 158
-  old_age_death_curve = 4.5
+  old_age_death_curve = 8
 
   # 0-1 chance for a kit of a certain age to die on moonskip if modded litters is on 
   [death_related.kit_death_chances]
@@ -532,13 +532,13 @@ dev_tools = false
 
 [clan_creation]
   # Set this to -1 for it to be infinite
-  rerolls = 3
+  rerolls = -1
 
   # If true, boosts the chance of rarer genes and breeds for founding cats
   use_special_roller = true
 
   # how many neighbouring clans are generated on clan creation. Must be at least 1
-  other_clans_range = [2, 5]
+  other_clans_range = [2, 3]
 
 [genetics_config]
   # 1/chance for newly generated kittypets and other cats to be purebred
@@ -664,17 +664,17 @@ dev_tools = false
   # base possible experience gain for apprentices
   # [[lowest_exp_gain, highest_exp_gain], [lowest_exp_gain2, highest_exp_gain2]]
   # use the second range to slightly increase the probability that those values are used
-  base_app_timeskip_ex = [[3, 12], [5, 6]]
-  base_med_app_timeskip_ex = [[2, 7], [2, 3]]
+  base_app_timeskip_ex = [[4, 8], [5, 6]]
+  base_med_app_timeskip_ex = [[2, 8], [4, 6]]
 
   # minimum age required for a cat to graduate
-  min_graduating_age = 10
+  min_graduating_age = 32
 
   [graduation.max_apprentice_age]
     # max apprentice ages. after this, they're forcibly promoted
-    "healer apprentice" = 30
-    apprentice = 25
-    "mediator apprentice" = 25
+    "healer apprentice" = 50
+    apprentice = 23
+    "mediator apprentice" = 23
 
 [outside_ex]
   # base possible experience gain for cats outside the clan
