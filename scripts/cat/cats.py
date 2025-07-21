@@ -102,12 +102,12 @@ class Cat:
     # Ranges are inclusive to both bounds
     experience_levels_range = {
         "untrained": (0, 0),
-        "trainee": (1, 50),
-        "prepared": (51, 110),
-        "competent": (110, 170),
-        "proficient": (171, 240),
-        "expert": (241, 320),
-        "master": (321, 321),
+        "trainee": (1, 99),
+        "prepared": (100, 199),
+        "competent": (200, 299),
+        "proficient": (300, 399),
+        "expert": (400, 499),
+        "master": (500, 500),
     }
 
     all_cats: Dict[str, Cat] = {}  # ID: object
